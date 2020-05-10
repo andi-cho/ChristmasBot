@@ -1,7 +1,6 @@
 import tweepy
 import time
 from datetime import datetime
-from keys import *
 from time import sleep
 import os
 from os import environ
