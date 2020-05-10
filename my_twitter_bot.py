@@ -25,14 +25,13 @@ def get_days_till_xmas():
 	print tweet 
 	return tweet
 
-def send_tweet():
-	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-	auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-	api = tweepy.API(auth)
-	while True:
-		print('posting to twitter...')        
-		tweet = get_days_till_xmas()
-		api.update_status(tweet)
-		time.sleep(INTERVAL)
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+api = tweepy.API(auth)
 
-send_tweet()
+
+while True:
+	print('posting to twitter...')        
+	tweet = get_days_till_xmas()
+	api.update_status(tweet)
+	time.sleep(INTERVAL)
