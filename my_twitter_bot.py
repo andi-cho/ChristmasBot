@@ -17,11 +17,11 @@ def get_days_till_xmas():
 	delta = xmas - now
 	final = delta.days
 	if final > 0:
-		tweet = str(final) + (" days until christmas! the time is now ") + str(now.hour) + ":" + str(now.minute)
+		tweet = str(final) + (" days until christmas!")
 	elif final == 1:
 		tweet = "merry christmas eve, one more sleep!"
 	elif final == 0:
-		tweet = "merry christmas ya filthy animal !!!"
+		tweet = "merry christmas ya filthy animal !!"
 	elif final < 0:
 		tweet = "it is past christmas, wait until next year!"
 	api.update_status(tweet) 
@@ -35,4 +35,4 @@ api = tweepy.API(auth)
 while True:
 	print('posting to twitter...')        
 	get_days_till_xmas()
-	time.sleep(300)
+	time.sleep(86400)
